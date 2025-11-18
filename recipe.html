@@ -10,19 +10,29 @@
 </head>
 <body>
     <nav>
-        <div class="logo">
-            <img src="/recipe/green-leaf-logo-vector-removebg-preview.png" alt="#">
-            <h1>Healthy Recipe Finder</h1>
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="recipe.html">Recipes</a></li>
-        </ul>
-        <div class="browse">
-            <button type="button">Browse recipes</button>
-        </div>
-    </nav>
+      <div class="logo">
+          <img src="/recipe/green-leaf-logo-vector-removebg-preview.png" alt="#">
+          <h1>Healthy Recipe Finder</h1>
+      </div>
+
+      <!-- menu icon for mobile (added) -->
+      <div class="menu-icon" id="menuIcon" onclick="toggleMenu()" aria-label="Toggle menu" role="button">☰</div>
+
+      <ul id="navList">
+          <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+          <li><a href="about.html" onclick="closeMenu()">About</a></li>
+          <li><a href="recipe.html" onclick="closeMenu()">Recipes</a></li>
+
+          <!-- browse button moved into mobile menu (visible only on small screens) -->
+          <li class="browse-mobile" style="display:none;">
+            <button type="button" onclick="onBrowseClick()">Browse recipes</button>
+          </li>
+      </ul>
+
+      <div class="browse">
+          <button type="button" onclick="onBrowseClick()">Browse recipes</button>
+      </div>
+  </nav>
 
     <!-- body -->
     <div class="body">
@@ -46,7 +56,7 @@
                         <option value="10 mins">10 mins</option>
                         <option value="12 mins">12 mins</option>
                         <option value="15 mins">15 mins</option>
-                        <option value="20 mins">20 mins</option>
+                        
                     </select>
                 </div>
                 <div class="search-bar">
@@ -62,7 +72,7 @@
                 <div class="time">
                     <div class="prep">
                         <i class="fa-solid fa-clock"></i>
-                        <span>Prep: 10 mins</span>
+                        <span>Prep: 5 mins</span>
                     </div>
                     <div class="cook">
                         <i class="fa-solid fa-utensils"></i>
@@ -103,7 +113,7 @@
                 <div class="time">
                     <div class="prep">
                         <i class="fa-solid fa-clock"></i>
-                        <span>Prep: 10 mins</span>
+                        <span>Prep: 5 mins</span>
                     </div>
                     <div class="cook">
                         <i class="fa-solid fa-utensils"></i>

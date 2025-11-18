@@ -43,7 +43,7 @@ nav ul li a{
     font-size: 20px;
     font-weight: 600;
 }
-.browse button,#explore{
+.browse button,.browze{
     height: 50px;
     width: 160px;
     background-color: #173A34;
@@ -53,3 +53,78 @@ nav ul li a{
     font-size: 18px;
     font-weight: bold;
 }
+/* ========== additions: menu icon and mobile responsive rules ========== */
+
+    /* mobile menu icon — hidden on desktop */
+    .menu-icon {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: #173A34;
+      user-select: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+
+    /* make sure nav items don't overflow on small screens */
+    nav ul li { white-space: nowrap; }
+
+    /* mobile layout */
+    @media (max-width: 768px) {
+      /* shrink logo area so there's room for icon */
+      .logo { width: auto; gap: 8px; padding-left: 8px; }
+      .logo h1 {
+        font-size: 30px;
+      }
+
+      /* hide desktop browse button */
+      .browse { display: none; }
+
+      /* show the menu icon */
+      .menu-icon { display: block; }
+
+      /* initial state: hide nav links */
+      nav ul {
+        display: none;
+      }
+
+      /* when active, show as vertical dropdown */
+      nav ul.active {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100px; /* same as nav height */
+        background: #dcd9d3;
+        padding: 18px 20px;
+        border-top: 1px solid rgba(0,0,0,0.06);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      }
+
+      /* make links larger & easier to tap */
+      nav ul li a {
+        display: block;
+        padding: 10px 8px;
+        font-size: 18px;
+      }
+
+      /* add a visible 'Browse' button inside mobile menu */
+      .browse-mobile {
+        display: inline-block;
+        margin-top: 6px;
+      }
+      .browse-mobile button,.browze{
+        height: 46px;
+        width: 100%;
+        max-width: 260px;
+        background-color: #173A34;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 8px;
+      }
+    }
